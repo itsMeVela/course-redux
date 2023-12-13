@@ -1,0 +1,7 @@
+#root {
+@apply bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300;
+ min-height: 100vh;
+ overflox-x: hidden;
+ position: relative;
+}
+
