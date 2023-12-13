@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "../cart/cartSlice";
 
 const ProducctList = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setLoading] = useState(false);
-
+    const dispatch = useDispatch();
+    const cartItem = useSelector(state => state.cart.cartItem);
+    console.log(cartItem);
     useEffect(() => {
        const fetchProducts = async () => {
         try {
@@ -20,6 +24,10 @@ const ProducctList = () => {
        fetchProducts();
     }, []);
 
+    const handleClickBuy = (product) => {
+        dispatch(addItemToCart(product))
+    }
+
     return (
         <div className="w-full h-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 py-5">
             {products.map((product) => {
@@ -33,7 +41,9 @@ const ProducctList = () => {
                        <div className="flex flex-col gap-6 mt-8">  {/* gap untuk atur jarak per element */}
                             <button
                             type="button"
-                            className="bg-purple-400 text-purple-100 hover:bg-purple-500 rounded-lg text-sm py-3 px-8">
+                            className="bg-purple-400 text-purple-100 hover:bg-purple-500 rounded-lg text-sm py-3 px-8"
+                            onClick={() => handleClickBuy(product)}
+                            >
                                 BUY NOW
                             </button>
                         <h3 className="font-bold">{product.title}</h3>
