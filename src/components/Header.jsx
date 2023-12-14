@@ -13,7 +13,11 @@ const Header = () => {
                   <h1 className="text-4xl font-bold text-purple-100">Simple E-Commerce</h1>
                   <button
                 type="button"
-                className="relative rounded-full bg-purple-500 p-2 text-purple-100">
+                className="relative rounded-full bg-purple-500 p-2 text-purple-100"
+                >
+                  <span className="absolute -top-2 -right-2 w-6 rounded-full bg-red-300 text-white text-sm flex items-center justify-center">
+                    {cartTotalItems}
+                    </span>
                   <img src={CartIcon} alt="cart" className="w-6"/>
                 </button>
                </div>  
