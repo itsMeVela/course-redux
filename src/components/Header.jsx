@@ -2,7 +2,7 @@ import CartIcon from '../assets/cart.svg';
 import { useSelector } from 'react-redux';
 import { selectCartTotalItems } from '../features/cart/cartSlice';
 
-const Header = () => {
+const Header = ({handleOpenModalCart}) => {
   const cartTotalItems = useSelector(selectCartTotalItems);
   console.log(cartTotalItems);
 
@@ -14,6 +14,7 @@ const Header = () => {
                   <button
                 type="button"
                 className="relative rounded-full bg-purple-500 p-2 text-purple-100"
+                onClick={handleOpenModalCart}
                 >
                   <span className="absolute -top-2 -right-2 w-6 rounded-full bg-red-300 text-white text-sm flex items-center justify-center">
                     {cartTotalItems}

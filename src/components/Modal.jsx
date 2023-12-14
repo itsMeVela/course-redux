@@ -6,23 +6,26 @@ const BackdropOverlay = () => {
     )
 }
 
-const ModalOverlay = ({props}) => {
+//mengatur ketika cart di klik maka selain cardnya akan hitam (fokus pop up)
+const ModalOverlay = ({children}) => {
     return (
         <div className="fixed top-0 left-0 w-full h-screen flex items-center justify-center z-30">
             <div className="bg-white p-4 rounded-lg shadow-lg text-gray-900 mx-2">
-                {props.children}
+                {children}
             </div>
         </div>
-    )
-}
+    );
+};
 
-const portalElement = document.getElementById("modal")
+const portalElement = document.getElementById("modal");
 
-const Modal = () => {
+const Modal = ({children}) => {
     return (
         <>
         {ReactDOM.createPortal(<BackdropOverlay />, portalElement)}
-        {ReactDOM.createPortal(<ModalOverlay />, portalElement)}
+        {ReactDOM.createPortal(
+        <ModalOverlay>{children}</ModalOverlay>,
+         portalElement)}
         </>
     )
 }

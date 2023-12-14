@@ -34,3 +34,4 @@ export default cartSlice
 //selector
 export const selectCartItems = state => state.cart.cartItems;
 export const selectCartTotalItems = state => state.cart.cartItems.reduce((total, item) => total + item.quantity, 0)
+export const selectCartTotalPrices = state => state.cart.cartItems.reduce((total, item) => total + item.price, 0)
