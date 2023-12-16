@@ -7,7 +7,7 @@ const Header = ({handleOpenModalCart}) => {
   console.log(cartTotalItems);
 
     return (
-        <header  className="bg-purple-400">
+        <header  className=" bg-purple-400  sticky top-0">
             <div className="max-w-7xl mx-auto px-4">
               <div className="flex items-center justify-between h-20">
                   <h1 className="text-4xl font-bold text-purple-100">Simple E-Commerce</h1>

@@ -32,7 +32,7 @@ const CartModal = ({ handleHideModalCart }) => {
           {cartItems.map((product) => {
             return (
               <div
-                className="w-full border-b-4 border-blue-200 pb-4"
+                className="w-full border-b-4 border-purple-300 pb-4"
                 key={product.id}
               >
                 <div className="flex items-center w-full">
@@ -54,14 +54,14 @@ const CartModal = ({ handleHideModalCart }) => {
                     <div className="flex items-center gap-4 mt-4 ml-auto">
                       <button
                         type="button"
-                        className="rounded-full bg-blue-400 w-5 h-5 text-white flex items-center justify-center"
+                        className="rounded-full bg-purple-400 w-5 h-5 text-white flex items-center justify-center"
                       >
                         -
                       </button>
                       <h3>{product.quantity}</h3>
                       <button
                         type="button"
-                        className="rounded-full bg-blue-400 w-5 h-5 text-white flex items-center justify-center"
+                        className="rounded-full bg-purple-400 w-5 h-5 text-white flex items-center justify-center"
                       >
                         +
                       </button>
